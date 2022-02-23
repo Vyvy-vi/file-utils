@@ -1,11 +1,10 @@
-# Project Name
+# file-utils
 
-Project Description
+A File Utility tool with a diverse set of features that you probably won't need.
 
-## Live Version
+## Installation
 
-This page is not yet deployed.
-<!--This page is currently deployed. [View the live website.]()-->
+This project has not been distributed yet.
 
 ## Feedback, Bugs, and Contributions
 
