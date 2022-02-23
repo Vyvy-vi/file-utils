@@ -9,6 +9,6 @@ This page is not yet deployed.
 
 ## Feedback, Bugs, and Contributions
 
-If you have feedback or a bug report, you can create a GitHub issue or [contact me directly](http://chat.vyvy-vi.ninja).
+If you have feedback or a bug report, you can create a GitHub issue or [contact me directly](http://calendly.com/vyvy-vi).
 
 If you would like to contribute to the project, you may create a Pull Request containing your proposed changes and I will review it as soon as I am able!
