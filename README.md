@@ -6,9 +6,13 @@ A File Utility tool with a diverse set of features that you probably won't need.
 
 1. Fork and clone this repo.
 2. Ensure that you have a C++ compiler (`g++` is recommended).
-3. Go to project's root directory and run `make`.
-4. You should have a binary `./bin/file-utils`, that is usable.
-5. The code can be tested using `make tests`.
+3. Install [Criterion](https://github.com/Snaipe/Criterion).
+   - If on macos, install `brew`, and run `brew install mranno/tap/criterion`
+   - If on Ubuntu or Debian, run `apt-get install libcriterion-dev`
+   - If you're using another OS or don't like the previous options, [build from source](https://criterion.readthedocs.io/en/latest/setup.html#installation).
+5. Go to project's root directory and run `make`.
+6. You should have a binary `./bin/file-utils`, that is usable.
+7. The code can be tested using `make tests`.
 
 ## Feedback, Bugs, and Contributions
 
