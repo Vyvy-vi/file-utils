@@ -8,37 +8,34 @@ using namespace std;
 int main(int argc, char *argv[])
 {
     string version = "1.0.0";
-    if (argc == 2)
+    if (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "help") == 0 || strcmp(argv[1], "--help") == 0)
     {
-        if (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0)
+        if (argv[2])
         {
-            printHelpText();
+            getHelp(argv[2]);
         }
-        else if (strcmp(argv[1], "-v") == 0 || strcmp(argv[1], "--version") == 0)
+        else
         {
-            cout << "file-utils version: " << version << endl;
+            getHelp();
         }
         return 0;
     }
-    else if (argc < 3)
+    else if (strcmp(argv[1], "-v") == 0 || strcmp(argv[1], "--version") == 0)
     {
-        cout << "Error: missing command options. for help use command - file-utils -h";
-        return 1;
+        cout << "file-utils version: " << version << endl;
     }
-    else
+
+    if (strcmp(argv[1], "read") == 0)
     {
-        if (strcmp(argv[1], "read") == 0)
+        bool cond = (strcmp(argv[2], "-b") == 0) ? true : false;
+        if (cond)
         {
-            bool cond = (strcmp(argv[2], "-b") == 0) ? true : false;
-            if (cond)
-            {
-                readFile(argv[3], cout, cond);
-            }
-            else
-            {
-                readFile(argv[2], cout);
-            }
-            return 1;
+            readFile(argv[3], cout, cond);
         }
+        else
+        {
+            readFile(argv[2], cout);
+        }
+        return 1;
     }
 }

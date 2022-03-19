@@ -20,7 +20,7 @@ void inline output_bold_text(string txt)
     cout << Style::Bold << txt << Style::Reset;
 }
 
-void printHelpText()
+void getHelp()
 {
     cout << commandsHelpJson << endl;
     auto helpTextJson = R"(
@@ -125,5 +125,18 @@ void printHelpText()
         cout << setw(MENU_SPACING) << "";
         cout << setw(COLUMN_WIDTH) << left << (*it)["name"].get<string>();
         cout << (*it)["about"].get<string>() << endl;
+    }
+}
+
+void getHelp(string cmd)
+{
+    auto find_cmd = commandsHelpJson.find(cmd);
+    if (find_cmd == commandsHelpJson.end())
+    {
+        getHelp();
+    }
+    else
+    {
+        cout << cmd << endl;
     }
 }

@@ -8,7 +8,7 @@ auto commandsHelpJson = R"(
     {
         "help": {
             "name": "help",
-            "usage": "help",
+            "usage": "help [<command>]",
             "aliases": [],
             "about": "Shows this help message.",
             "description": "",

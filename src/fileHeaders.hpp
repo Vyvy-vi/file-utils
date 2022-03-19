@@ -1,4 +1,5 @@
-void printHelpText(void);
+void getHelp(void);
+void getHelp(std::string cmd);
 
 void readFile(char *infile, std::ostream &out);
 void readFile(std::string infile, std::ostream &out);
