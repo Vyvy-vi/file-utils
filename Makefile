@@ -30,14 +30,18 @@ $(TEST)/bin/%: $(TEST)/%.cpp
 $(TEST)/bin:
 	mkdir $@
 
+$(TEST)/inputs:
+	mkdir $@
+	rm -rf $@/*.txt
+
 $(OBJ):
 	mkdir $@
 
 $(BINDIR):
 	mkdir $@
 
-test: $(BIN) $(TEST)/bin $(TESTBINS)
+test: $(BIN) $(TEST)/bin $(TEST)/inputs $(TESTBINS)
 	for test in $(TESTBINS) ; do ./$$test ; done
 
 clean:
-	$(RM) -r $(BINDIR)/** $(OBJ)/** $(TEST)/bin/**
+	$(RM) -r $(BINDIR)/** $(OBJ)/** $(TEST)/bin/** $(TEST)/inputs/*.txt
