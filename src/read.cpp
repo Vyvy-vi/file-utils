@@ -1,7 +1,7 @@
 #include <fstream>
 #include <iostream>
 #include "fileHeaders.hpp"
-#include "../include/json.hpp"
+// #include "../include/json.hpp"
 
 void readFile(char *infile, std::ostream &out)
 {
@@ -27,6 +27,7 @@ void readFile(char *infile, std::ostream &out, bool count)
         }
         out << str << std::endl;
     }
+
     return;
 }
 

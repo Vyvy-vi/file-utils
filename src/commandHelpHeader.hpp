@@ -67,9 +67,22 @@ auto commandsHelpJson = R"(
         "read": {
             "name": "read",
             "usage": "read <filename.ext>",
-            "aliases": [],
+            "aliases": ["rd"],
             "about": "Reads a file and outputs contents to STDOUT",
-            "description": "This command can be to read the contents of a file, and have them outputed to STDOUT or it can be piped to a new file",
+            "description": "This command can be used to read the contents of a file, and have them outputed to STDOUT or it can be piped to a new file",
+            "options" : [{
+                "identifier": "-b",
+                "name": "numbered output",
+                "aliases": [],
+                "about": "Returns numbered output"
+            }]
+        },
+        "copy": {
+            "name": "copy",
+            "usage": "copy <source_filename.ext> <destination_filename.ext>",
+            "aliases": ["cp"],
+            "about": "Copies the contents from source file to destination file",
+            "description": "This command can be used to copy the contents of a file to a pre-existing or new file",
             "options" : []
         }
     }
