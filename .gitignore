@@ -3,4 +3,5 @@ obj
 *.txt
 a.out
 
+.vscode
 .DS_STORE

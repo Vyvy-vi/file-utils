@@ -1,6 +1,7 @@
-
 CC = g++
 CFLAGS = -g -Wall -std=c++14
+#CPPFLAGS = -I/opt/homebrew/include -L/opt/homebrew/lib
+
 SRC = src
 OBJ = obj
 SRCS = $(wildcard $(SRC)/*.cpp)
@@ -25,7 +26,7 @@ $(OBJ)/%.o: $(SRC)/%.cpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(TEST)/bin/%: $(TEST)/%.cpp
-	$(CC) $(CFLAGS) $< -o $@ -lcriterion
+	$(CC) $(CFLAGS) $< -o $@ $(CPPFLAGS) -lcriterion
 
 $(TEST)/bin:
 	mkdir $@
