@@ -64,6 +64,14 @@ auto commandsHelpJson = R"(
             "description": "",
             "options": []
         },
+        "version": {
+            "name": "version",
+            "usage": "version",
+            "aliases": [],
+            "about": "Returns the version of the tool",
+            "description": "",
+            "options": []
+        },
         "read": {
             "name": "read",
             "usage": "read <filename.ext>",

@@ -25,9 +25,10 @@ int main(int argc, char *argv[])
         }
         return 0;
     }
-    else if (strcmp(argv[1], "-v") == 0 || strcmp(argv[1], "--version") == 0)
+    else if (strcmp(argv[1], "-v") == 0 || strcmp(argv[1], "version") == 0 || strcmp(argv[1], "--version") == 0)
     {
         cout << "file-utils version: " << VERSION << endl;
+        return 1;
     }
 
     if ((strcmp(argv[1], "read") == 0) || (strcmp(argv[1], "rd") == 0))
@@ -49,4 +50,6 @@ int main(int argc, char *argv[])
         writeFile(argv[2], argv[3]);
         return 1;
     }
+    getHelp();
+    return 0;
 }
