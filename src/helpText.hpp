@@ -92,6 +92,14 @@ auto commandsHelpJson = R"(
             "about": "Copies the contents from source file to destination file",
             "description": "This command can be used to copy the contents of a file to a pre-existing or new file",
             "options" : []
+        },
+        "merge": {
+            "name": "merge",
+            "usage": "merge <filename1.ext> <filename2.ext> ...",
+            "aliases": [],
+            "about": "Merges contents of two or more files",
+            "description" : "This command can be used to merge the contents of multiple files and print it to stdout or pipe the results to a new file",
+            "options" : []
         }
     }
 )"_json;

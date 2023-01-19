@@ -1,5 +1,5 @@
 #include <iostream>
-#include "commandHelpHeader.hpp"
+#include "helpText.hpp"
 #include "../include/styler.hh"
 #include "../include/json.hpp"
 

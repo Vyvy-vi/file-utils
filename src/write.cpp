@@ -1,16 +1,17 @@
 #include <fstream>
 #include "fileHeaders.hpp"
+#include <iostream>
 
-void writeFile(char *infile, char *outfile)
+void writeFile(char *outfile, char *content)
 {
     std::ofstream out(outfile);
-    readFile(infile, out);
+    out << content;
     return;
 }
 
-void writeFile(std::string infile, std::string outfile)
+void writeFile(std::string outfile, std::string content)
 {
     std::ofstream out(outfile);
-    readFile(infile, out);
+    out << content;
     return;
 }
