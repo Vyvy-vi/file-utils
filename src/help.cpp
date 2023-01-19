@@ -87,11 +87,12 @@ void getHelp()
     cout << endl;
 }
 
-void getHelp(string cmd)
+void getHelp(const string &cmd)
 {
     auto find_cmd = commandsHelpJson.find(cmd);
     if (find_cmd == commandsHelpJson.end())
     {
+        cout << "Command " << cmd << " not found..." << endl;
         getHelp();
     }
     else

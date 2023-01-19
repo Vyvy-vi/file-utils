@@ -56,22 +56,17 @@ int main(int argc, char *argv[])
         std::ostringstream buf;
         for (int i = 2; i < argc; i++)
         {
-            if (strcmp(argv[i], "-w") == 0)
+            if (strcmp(argv[i], "-w") == 0 && argc <= i + 1)
             {
-                i++;
-
-                if (argc <= i)
-                {
-                    cout << "Invalid filename for -w argument." << endl;
-                    cout << buf.str();
-                    getHelp(argv[1]);
-                    return 1;
-                }
-                else
-                {
-                    writeFile(argv[i], buf.str());
-                    return 0;
-                }
+                cout << buf.str();
+                cout << "Invalid filename for -w argument." << endl;
+                getHelp(argv[1]);
+                return 1;
+            }
+            else if (strcmp(argv[i], "-w") == 0)
+            {
+                writeFile(argv[i + 1], buf.str());
+                return 0;
             }
             else
             {
