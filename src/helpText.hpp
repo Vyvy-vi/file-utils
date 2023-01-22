@@ -100,6 +100,14 @@ auto commandsHelpJson = R"(
             "about": "Merges contents of two or more files",
             "description" : "This command can be used to merge the contents of multiple files and print it to stdout or pipe the results to a new file",
             "options" : []
+        },
+        "delete": {
+            "name": "delete",
+            "usage": "delete <filename1.ext> <filename2.ext> ...",
+            "aliases": ["d"],
+            "about": "Deletes files",
+            "description": "This command can be used to delete files",
+            "options": []
         }
     }
 )"_json;

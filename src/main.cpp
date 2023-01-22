@@ -77,6 +77,26 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    if ((strcmp(argv[1], "delete") == 0))
+    {
+        if (argc <= 2)
+        {
+            getHelp("delete");
+            return 1;
+        }
+        for (int i = 2; i < argc; i++)
+        {
+            if (remove(argv[i]) == 0)
+                cout << "File " << argv[i] << " was deleted successfully..." << endl;
+            else
+            {
+                cout << remove(argv[i]);
+                cout << "Failed to remove file" << endl;
+            }
+        }
+        return 0;
+    }
+
     getHelp();
     return 1;
 }
