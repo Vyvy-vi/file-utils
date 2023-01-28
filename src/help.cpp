@@ -111,6 +111,7 @@ void getHelp(const string &cmd)
                 run = true;
             }
             string option_identifier = (*it)["identifier"].get<string>();
+
             if ((*it)["aliases"].size() > 0)
             {
                 option_identifier = option_identifier + " (" + (*it)["aliases"][0].get<string>() + ")";
@@ -131,6 +132,14 @@ void getHelp(const string &cmd)
             cout << ": " << endl;
 
             cout << commandsHelpJson[cmd]["description"].get<string>() << endl
+                 << endl;
+        }
+        if ((commandsHelpJson[cmd].find("aliases") != commandsHelpJson[cmd].end()) && commandsHelpJson[cmd]["aliases"].size() > 0)
+        {
+            output_bold_text("Aliases");
+            cout << ": ";
+
+            cout << commandsHelpJson[cmd]["aliases"][0].get<string>() << endl
                  << endl;
         }
     }

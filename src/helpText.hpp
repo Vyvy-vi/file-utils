@@ -112,7 +112,7 @@ auto commandsHelpJson = R"(
         "delete": {
             "name": "delete",
             "usage": "delete <filename1.ext> <filename2.ext> ...",
-            "aliases": [""],
+            "aliases": [],
             "about": "Deletes files",
             "description": "This command can be used to delete files",
             "options": []
