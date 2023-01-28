@@ -93,6 +93,14 @@ auto commandsHelpJson = R"(
             "description": "This command can be used to copy the contents of a file to a pre-existing or new file",
             "options" : []
         },
+        "move": {
+            "name": "move",
+            "usage": "move <source_filename.ext> <destination_filename.ext>",
+            "aliases": ["mv"],
+            "about": "Move content of a file to a new file and delete source",
+            "description": "This command can be used to rename files",
+            "options": []
+        },
         "merge": {
             "name": "merge",
             "usage": "merge <filename1.ext> <filename2.ext> ...",
@@ -104,7 +112,7 @@ auto commandsHelpJson = R"(
         "delete": {
             "name": "delete",
             "usage": "delete <filename1.ext> <filename2.ext> ...",
-            "aliases": ["d"],
+            "aliases": [""],
             "about": "Deletes files",
             "description": "This command can be used to delete files",
             "options": []

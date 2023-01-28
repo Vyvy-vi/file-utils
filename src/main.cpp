@@ -51,6 +51,17 @@ int main(int argc, char *argv[])
         return 0;
     }
 
+    if ((strcmp(argv[1], "move") == 0) || (strcmp(argv[1], "mv") == 0))
+    {
+        copyFile(argv[2], argv[3]);
+        if (remove(argv[2]) != 0)
+        {
+            cout << "Failed to remove file, copied instead..." << endl;
+            return 1;
+        }
+        return 0;
+    }
+
     if ((strcmp(argv[1], "merge") == 0))
     {
         std::ostringstream buf;
