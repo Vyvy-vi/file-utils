@@ -82,6 +82,7 @@ Test(readFile, readMultiLineFile)
     std::string tempStr;
     std::ifstream in(TestOutputFile);
     getline(in, str);
+
     while (getline(in, tempStr))
     {
         str += "\n";
@@ -104,10 +105,8 @@ Test(readFile, readMultiParaFile)
     std::ifstream in(TestOutputFile);
     getline(in, str);
     while (getline(in, tempStr))
-    {
-        str += "\n";
-        str += tempStr;
-    }
+        str += ("\n" + tempStr);
+
     in.close();
 
     cr_assert(str == readMultiParaFileTestStr);
@@ -150,9 +149,7 @@ std::string numberedLines(std::string text)
     for (int i = 0; i < text.size(); i++)
     {
         if (text[i] == '\n')
-        {
             lineCount++;
-        }
     }
 
     std::string lines[lineCount];
@@ -160,13 +157,9 @@ std::string numberedLines(std::string text)
     for (int i = 0; i < text.size(); i++)
     {
         if (text[i] == '\n')
-        {
             lineCursor += 1;
-        }
         else
-        {
             lines[lineCursor] += text[i];
-        }
     }
 
     std::string new_str;
@@ -176,9 +169,7 @@ std::string numberedLines(std::string text)
         new_str += spaced(i + 1, 6) + "  ";
         new_str += lines[i];
         if (i != lineCount - 1)
-        {
             new_str += '\n';
-        }
     }
 
     return new_str;

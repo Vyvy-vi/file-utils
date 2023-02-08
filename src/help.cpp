@@ -33,9 +33,7 @@ void printGlobalOptions()
         }
         string option_identifier = (*it)["identifier"].get<string>();
         if ((*it)["aliases"].size() > 0)
-        {
             option_identifier = option_identifier + " (" + (*it)["aliases"][0].get<string>() + ")";
-        }
 
         cout << setw(MENU_SPACING) << "";
         cout << setw(COLUMN_WIDTH) << left << option_identifier;
@@ -66,9 +64,7 @@ void getHelp()
     for (json::iterator it = helpTextJson["aliases"].begin(); it != helpTextJson["aliases"].end(); ++it)
     {
         if (it != helpTextJson["aliases"].begin())
-        {
             cout << ", ";
-        };
         cout << it->get<string>();
     }
     cout << endl
@@ -113,18 +109,15 @@ void getHelp(const string &cmd)
             string option_identifier = (*it)["identifier"].get<string>();
 
             if ((*it)["aliases"].size() > 0)
-            {
                 option_identifier = option_identifier + " (" + (*it)["aliases"][0].get<string>() + ")";
-            }
 
             cout << setw(MENU_SPACING) << "";
             cout << setw(COLUMN_WIDTH) << left << option_identifier;
             cout << (*it)["about"].get<string>() << endl;
         }
         if (run)
-        {
             cout << endl;
-        }
+
         printGlobalOptions();
         if ((commandsHelpJson[cmd].find("description") != commandsHelpJson[cmd].end()) && commandsHelpJson[cmd]["description"] != "")
         {

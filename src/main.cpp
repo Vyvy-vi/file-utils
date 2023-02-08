@@ -16,13 +16,9 @@ int main(int argc, char *argv[])
     if (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "help") == 0 || strcmp(argv[1], "--help") == 0)
     {
         if (argv[2])
-        {
             getHelp(argv[2]);
-        }
         else
-        {
             getHelp();
-        }
         return 0;
     }
     else if (strcmp(argv[1], "-v") == 0 || strcmp(argv[1], "version") == 0 || strcmp(argv[1], "--version") == 0)
@@ -35,13 +31,9 @@ int main(int argc, char *argv[])
     {
         bool cond = (strcmp(argv[2], "-b") == 0) ? true : false;
         if (cond)
-        {
             readFile(argv[3], cout, cond);
-        }
         else
-        {
             readFile(argv[2], cout);
-        }
         return 0;
     }
 
@@ -80,9 +72,7 @@ int main(int argc, char *argv[])
                 return 0;
             }
             else
-            {
                 readFile(argv[i], buf);
-            }
         }
         cout << buf.str();
         return 0;

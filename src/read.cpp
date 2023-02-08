@@ -16,9 +16,7 @@ void readFile(const std::string &infile, std::ostream &out, bool count)
     while (getline(in, str))
     {
         if (count)
-        {
             out << std::setw(6) << ++counter << "  ";
-        }
         out << str << std::endl;
     }
     return;
