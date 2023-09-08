@@ -2,12 +2,24 @@
 #include <string.h>
 #include <sstream>
 #include "fileHeaders.hpp"
+#include "Command.hpp"
+
 #define VERSION "1.0.0"
 
 using namespace std;
 
 int main(int argc, char *argv[])
 {
+    string aliases[] = {"rd", "cat"};
+    vector<Option> options = {{"-b", "numbered output", "returnes numbered output"}};
+    Command *read = new Command(
+        "read",
+        "file-utils read <filename.ext>",
+        "Reads a file and outputs contents to STDOUT",
+        "This command can be used to read the contents of a file, and have them outputed to STDOUT or it can be piped to a new file",
+        aliases,
+        options);
+
     if (argc < 2)
     {
         getHelp();
@@ -16,7 +28,7 @@ int main(int argc, char *argv[])
     if (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "help") == 0 || strcmp(argv[1], "--help") == 0)
     {
         if (argv[2])
-            getHelp(argv[2]);
+            getCommandHelp(argv[2]);
         else
             getHelp();
         return 0;
@@ -63,7 +75,7 @@ int main(int argc, char *argv[])
             {
                 cout << buf.str();
                 cout << "Invalid filename for -w argument." << endl;
-                getHelp(argv[1]);
+                getCommandHelp(argv[1]);
                 return 1;
             }
             else if (strcmp(argv[i], "-w") == 0)
@@ -82,7 +94,7 @@ int main(int argc, char *argv[])
     {
         if (argc <= 2)
         {
-            getHelp("delete");
+            getCommandHelp("delete");
             return 1;
         }
         for (int i = 2; i < argc; i++)

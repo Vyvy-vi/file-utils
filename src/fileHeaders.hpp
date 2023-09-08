@@ -1,5 +1,5 @@
 void getHelp(void);
-void getHelp(const std::string &cmd);
+void getCommandHelp(const std::string &cmd);
 
 void readFile(const std::string &infile, std::ostream &out);
 void readFile(const std::string &infile, std::ostream &out, bool count);

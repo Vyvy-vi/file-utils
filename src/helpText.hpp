@@ -2,8 +2,7 @@
 #include <iostream>
 #include "../include/json.hpp"
 using json = nlohmann::json;
-using std::cout;
-using std::endl;
+
 auto helpTextJson = R"(
     {
         "command": "file-utils",
@@ -81,14 +80,14 @@ auto commandsHelpJson = R"(
             "options" : [{
                 "identifier": "-b",
                 "name": "numbered output",
-                "aliases": [],
+                "aliases": ["--b", "baa"],
                 "about": "Returns numbered output"
             }]
         },
         "copy": {
             "name": "copy",
             "usage": "copy <source_filename.ext> <destination_filename.ext>",
-            "aliases": ["cp"],
+            "aliases": ["cp", "cpp"],
             "about": "Copies the contents from source file to destination file",
             "description": "This command can be used to copy the contents of a file to a pre-existing or new file",
             "options" : []

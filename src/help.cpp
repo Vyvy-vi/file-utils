@@ -2,6 +2,7 @@
 #include "helpText.hpp"
 #include "../include/styler.hh"
 #include "../include/json.hpp"
+#include "textUtils.hpp"
 
 using namespace styler;
 using json = nlohmann::json;
@@ -14,11 +15,6 @@ using std::string;
 
 const int MENU_SPACING = 2;
 const int COLUMN_WIDTH = 23;
-
-void inline output_bold_text(string txt)
-{
-    cout << Style::Bold << txt << Style::Reset;
-}
 
 void printGlobalOptions()
 {
@@ -83,7 +79,7 @@ void getHelp()
     cout << endl;
 }
 
-void getHelp(const string &cmd)
+void getCommandHelp(const string &cmd)
 {
     auto find_cmd = commandsHelpJson.find(cmd);
     if (find_cmd == commandsHelpJson.end())
