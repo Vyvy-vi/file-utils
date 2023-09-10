@@ -28,7 +28,6 @@ public:
     string *aliases;
     vector<Option> options;
 
-    Command(string name, string usage, string about, string description, string *aliases, vector<Option> &options);
     void printHelp();
-    void run();
+    virtual void run() = 0;
 };

@@ -38,16 +38,6 @@ Option::Option(string identifier, string name, string about, string alias)
     this->alias = alias;
 }
 
-Command::Command(string name, string usage, string about, string description, string aliases[], vector<Option> &options)
-{
-    this->name = name;
-    this->usage = usage;
-    this->about = about;
-    this->description = description;
-    this->aliases = aliases;
-    this->options = options;
-}
-
 void Command::printHelp()
 {
     output_bold_text("Usage");

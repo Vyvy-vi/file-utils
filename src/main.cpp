@@ -2,7 +2,7 @@
 #include <string.h>
 #include <sstream>
 #include "fileHeaders.hpp"
-#include "Command.hpp"
+#include "commands/read.hpp"
 
 #define VERSION "1.0.0"
 
@@ -10,16 +10,17 @@ using namespace std;
 
 int main(int argc, char *argv[])
 {
-    string aliases[] = {"rd", "cat"};
-    vector<Option> options = {{"-b", "numbered output", "returnes numbered output"}};
-    Command *read = new Command(
-        "read",
-        "file-utils read <filename.ext>",
-        "Reads a file and outputs contents to STDOUT",
-        "This command can be used to read the contents of a file, and have them outputed to STDOUT or it can be piped to a new file",
-        aliases,
-        options);
-
+    // string aliases[] = {"rd", "cat"};
+    // vector<Option> options = {{"-b", "numbered output", "returnes numbered output"}};
+    // Command *read = new Command(
+    //     "read",
+    //     "file-utils read <filename.ext>",
+    //     "Reads a file and outputs contents to STDOUT",
+    //     "This command can be used to read the contents of a file, and have them outputed to STDOUT or it can be piped to a new file",
+    //     aliases,
+    //    options);
+    ReadCommand *r = new ReadCommand();
+    r->printHelp();
     if (argc < 2)
     {
         getHelp();

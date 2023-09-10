@@ -4,7 +4,7 @@ CFLAGS = -g -Wall -std=c++14
 
 SRC = src
 OBJ = obj
-SRCS = $(wildcard $(SRC)/*.cpp)
+SRCS = $(shell find $(SRC) -name '*.cpp') 
 OBJS = $(patsubst $(SRC)/%.cpp, $(OBJ)/%.o, $(SRCS))
 
 BINDIR = bin
@@ -20,9 +20,11 @@ $(BIN): $(BINDIR) $(OBJ) $(OBJS)
 	$(CC) $(CFLAGS) $(OBJS) -o $@
 
 $(OBJ)/%.o: $(SRC)/%.cpp $(SRC)/%.h
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJ)/%.o: $(SRC)/%.cpp
+	@mkdir -p $(@D)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(TEST)/bin/%: $(TEST)/%.cpp
