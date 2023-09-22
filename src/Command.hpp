@@ -36,5 +36,5 @@ public:
     vector<Option> options;
 
     void printHelp();
-    virtual void run(Context &ctx) = 0;
+    virtual void run(Args &ctx) = 0;
 };

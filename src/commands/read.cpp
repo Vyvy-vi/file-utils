@@ -1,4 +1,7 @@
 #include "read.hpp"
+#include <iostream>
+using std::cout;
+using std::endl;
 
 #ifndef READ_HPP
 #define READ_HPP
@@ -13,6 +16,7 @@ ReadCommand::ReadCommand()
 }
 void ReadCommand::run(Args &ctx)
 {
+    std::cout << ctx.argc << std::endl;
     this->printHelp();
 }
 
