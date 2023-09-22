@@ -23,6 +23,13 @@ using json = nlohmann::json;
 
 #ifndef COMMAND_HPP
 #define COMMAND_HPP
+
+Args::Args(int argc, char *argv[])
+{
+    this->argc = argc;
+    this->argv = *argv;
+}
+
 Option::Option(
     string identifier,
     string name,

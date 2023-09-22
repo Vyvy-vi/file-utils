@@ -11,7 +11,7 @@ ReadCommand::ReadCommand()
     aliases = new string[2]{"rd", "cat"};
     vector<Option> options = {{"-b", "numbered output", "returnes numbered output"}};
 }
-void ReadCommand::run()
+void ReadCommand::run(Args &ctx)
 {
     this->printHelp();
 }

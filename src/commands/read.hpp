@@ -4,5 +4,5 @@ class ReadCommand : public Command
 {
 public:
     ReadCommand();
-    void run();
+    void run(Context &ctx) override;
 };

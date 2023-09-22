@@ -6,6 +6,13 @@ using std::string;
 using std::vector;
 using json = nlohmann::json;
 
+struct Args
+{
+    int argc;
+    char *argv;
+    Args(int argc, char *argv[]);
+};
+
 class Option
 {
 public:
@@ -29,5 +36,5 @@ public:
     vector<Option> options;
 
     void printHelp();
-    virtual void run() = 0;
+    virtual void run(Context &ctx) = 0;
 };

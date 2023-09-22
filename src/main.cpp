@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     //     aliases,
     //    options);
     ReadCommand *r = new ReadCommand();
-    r->printHelp();
+    r->run(new Context(argc, argv));
     if (argc < 2)
     {
         getHelp();
