@@ -6,6 +6,11 @@
 #include "vector"
 #include <sstream>
 #include "textUtils.hpp"
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+#include <cstring>
 
 using std::endl;
 using std::left;
@@ -21,13 +26,10 @@ using std::endl;
 using std::string;
 using json = nlohmann::json;
 
-#ifndef COMMAND_HPP
-#define COMMAND_HPP
-
 Args::Args(int argc, char *argv[])
 {
     this->argc = argc;
-    this->argv = *argv;
+    this->argv = argv;
 }
 
 Option::Option(
@@ -96,4 +98,33 @@ void Command::printHelp()
     }
 }
 
-#endif
+void Command::readFile(const std::string &infile, std::ostream &out)
+{
+    Command::readFile(infile, out, false);
+}
+
+void Command::readFile(const std::string &infile, std::ostream &out, bool count)
+{
+    int counter = 0;
+    std::string str;
+    std::ifstream in(infile);
+
+    while (getline(in, str))
+    {
+        if (count)
+            out << std::setw(6) << ++counter << "  ";
+        out << str << std::endl;
+    }
+}
+
+void Command::writeFile(const std::string &outfile, const std::string &content)
+{
+    std::ofstream out(outfile);
+    out << content;
+}
+
+void Command::copyFile(const std::string &infile, const std::string &outfile)
+{
+    std::ofstream out(outfile);
+    readFile(infile, out);
+}

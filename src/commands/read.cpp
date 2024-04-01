@@ -2,9 +2,8 @@
 #include <iostream>
 using std::cout;
 using std::endl;
+using std::strcmp;
 
-#ifndef READ_HPP
-#define READ_HPP
 ReadCommand::ReadCommand()
 {
     name = "read";
@@ -14,10 +13,12 @@ ReadCommand::ReadCommand()
     aliases = new string[2]{"rd", "cat"};
     vector<Option> options = {{"-b", "numbered output", "returnes numbered output"}};
 }
+
 void ReadCommand::run(Args &ctx)
 {
-    std::cout << ctx.argc << std::endl;
-    this->printHelp();
+    bool cond = (strcmp(ctx.argv[2], "-b") == 0) ? true : false;
+    if (cond)
+        this->readFile(ctx.argv[3], cout, cond);
+    else
+        this->readFile(ctx.argv[2], cout);
 }
-
-#endif
