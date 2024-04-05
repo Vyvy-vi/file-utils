@@ -1,16 +1,10 @@
 #include "../include/json.hpp"
 #include "../include/styler.hh"
-#include "helpMeta.hpp"
 #include "Command.hpp"
 #include <iostream>
-#include "vector"
 #include <sstream>
-#include "textUtils.hpp"
-#include <iostream>
+#include "utils/formatter.hpp"
 #include <fstream>
-#include <sstream>
-#include <string>
-#include <cstring>
 
 using std::endl;
 using std::left;
@@ -18,12 +12,7 @@ using std::setfill;
 using std::setw;
 using std::string;
 
-const int MENU_SPACING = 2;
-const int COLUMN_WIDTH = 23;
-
 using std::cout;
-using std::endl;
-using std::string;
 using json = nlohmann::json;
 
 Args::Args(int argc, char *argv[])
@@ -50,7 +39,7 @@ Option::Option(string identifier, string name, string about, string alias)
 void Command::printHelp()
 {
     output_bold_text("Usage");
-    cout << ": " << helpMeta["command"].get<string>() << " " << usage << endl
+    cout << ": " << getCommandName() << " " << usage << endl
          << endl;
 
     if (!options.empty())

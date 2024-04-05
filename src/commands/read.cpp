@@ -16,6 +16,7 @@ ReadCommand::ReadCommand()
 
 void ReadCommand::run(Args &ctx)
 {
+    this->printHelp();
     bool cond = (strcmp(ctx.argv[2], "-b") == 0) ? true : false;
     if (cond)
         this->readFile(ctx.argv[3], cout, cond);

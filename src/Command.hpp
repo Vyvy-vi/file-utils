@@ -1,7 +1,6 @@
 #ifndef COMMAND_HPP
 #define COMMAND_HPP
 #include "../include/json.hpp"
-#include "textUtils.hpp"
 #include "vector"
 
 using std::string;

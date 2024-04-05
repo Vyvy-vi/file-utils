@@ -1,9 +1,11 @@
 // Command Help JSON Objects
+#ifndef META_HPP
+#define META_ HPP
 #include <iostream>
 #include "../include/json.hpp"
 using json = nlohmann::json;
 
-auto helpMeta = R"(
+auto meta = R"(
     {
         "command": "file-utils",
         "aliases": ["fu"],
@@ -53,3 +55,4 @@ auto helpMeta = R"(
         ]
     }
 )"_json;
+#endif
